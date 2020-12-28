@@ -1,0 +1,28 @@
+/* Admin Page styles */
+
+ul.jam-applicants li span {
+  margin-right: 15px;
+  display: inline-block;
+}
+ul.jam-applicants li span:last-child {
+  margin-right: 0;
+  float: right;
+  color: #72777c;
+}
+ul.jam-view-all {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin: 30px 0 0;
+}
+ul.jam-applicants li span:first-child {
+  min-width: 100px;
+}
+ul.jam-applicants li span:nth-child(2) {
+  min-width: 150px;
+}
+p.jam-no-entry {
+  color: #a93939;
+  margin: 25px auto 0;
+  font-weight: bold;
+  text-align: center;
+}

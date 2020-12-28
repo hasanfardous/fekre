@@ -1,0 +1,39 @@
+/* Applicant form styles */
+.applicant-form-wrapper {
+    margin: 20px auto;
+  }
+  
+  .single-entry {
+    width: 50%;
+    float: left;
+    padding: 15px;
+  }
+  
+  .single-entry label {
+    width: 110px;
+  }
+  
+  .single-entry input {
+    width: 100%;
+    padding: 10px 18px;
+    border: 1px solid #ddd;
+    color: #888;
+  }
+  
+  .single-entry.presentAddress {
+    width: 100%;
+  }
+  
+  .single-entry.submitBtn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .single-entry #submitBtn {
+    cursor: pointer;
+    width: 200px;
+    padding: 15px;
+  }
+  .jam-confirmation-message {
+    margin: 0 15px;
+  }
