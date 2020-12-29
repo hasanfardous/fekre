@@ -1,7 +1,7 @@
 === Job App Manager ===
 Contributors: hasanfardous
 Donate link: https://me.hasanfardous.com
-Tags: comments, spam
+Tags: job-app-manager, job-application, job-app-plugin, job-application-form, online-job-application
 Requires at least: 5.0
 Tested up to: 5.5.3
 Stable tag: trunk

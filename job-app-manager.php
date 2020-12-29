@@ -70,10 +70,12 @@ require plugin_dir_path( __FILE__ ) . 'includes/admin/admin-menu-page.php';
  * The code that runs during plugin activation.
  */
 register_activation_hook( __FILE__, 'jam_create_table' );
-function jam_create_table() {
-	// Saving our plugin current version
-	add_option( "job_app_manager_version", JOB_APP_MANAGER_VERSION );
-	
-	// Making the table
-	applicant_submissions_create_table();
+if ( ! function_exists( 'jam_create_db_table' ) ) {
+	function jam_create_db_table() {
+		// Saving our plugin current version
+		add_option( "job_app_manager_version", JOB_APP_MANAGER_VERSION );
+		
+		// Making the table
+		jam_applicant_submissions_create_db_table();
+	}
 }

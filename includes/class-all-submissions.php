@@ -25,15 +25,19 @@ class Jam_All_Submissions extends WP_List_Table {
     }
 
     function column_cb( $item ) {
-        return "<input type='checkbox' value='{$item['id']}'>";
+        $item_id = $item['id'];
+        return "<input type='checkbox' value='{$item_id}'>";
     }
 
     function column_first_name( $item ) {
-        $nonce = wp_create_nonce( 'delete-submission' );
-        $actions = [
-            'delete' => sprintf( "<a href='?page=jam_submissions&id=%s&action=%s&attachment_id=%s&nonce=%s'>%s</a>", $item['id'], 'delete', $item['cv_path'], $nonce, __( 'Delete', 'job-app-manager' ) )
+        $item_id    = $item['id'];
+        $cv_path    = $item['cv_path'];
+        $first_name = $item['first_name'];
+        $nonce      = wp_create_nonce( 'jam_delete_submission' );
+        $actions    = [
+            'delete' => sprintf( "<a href='?page=jam_submissions&id=%s&action=%s&attachment_id=%s&nonce=%s' onclick='return confirm(\"Do you really want to delete record?\")'>%s</a>", $item_id, 'delete', $cv_path, $nonce, __( 'Delete', 'job-app-manager' ) )
         ];
-        return sprintf( "%s %s", $item['first_name'], $this->row_actions( $actions ) );
+        return sprintf( "%s %s", $first_name, $this->row_actions( $actions ) );
     }
 
     function get_shortable_columns() {
@@ -43,7 +47,8 @@ class Jam_All_Submissions extends WP_List_Table {
     }
 
     function column_cv_path( $item ) {
-        $download_link = wp_get_attachment_url( $item['cv_path'] );
+        $cv_path        = $item['cv_path'];
+        $download_link  = wp_get_attachment_url( $cv_path );
         return "<a href='{$download_link}' target='_blank'>".__( 'Download CV', 'job-app-manager' )."</a>";
     }
     

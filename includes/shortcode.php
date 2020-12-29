@@ -11,8 +11,7 @@ function jam_add_applicant_form_shortcode() {
 	<div class="applicant-form-wrapper">
 		<div class="jam-confirmation-message"></div>
 		<form method="post" class="jam-applicant-form" enctype="multipart/form-data">
-			<input type="hidden" name="action" value="applicant_form_data">
-			<?php wp_nonce_field( 'applicant_form_data' );?>
+			<?php wp_nonce_field( 'jam_applicant_data_nonce' );?>
 			<div class="single-entry">
 				<label for="firstName">First Name</label>
 				<input type="text" name="firstName" id="firstName" required>
